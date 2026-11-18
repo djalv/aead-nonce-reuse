@@ -1,0 +1,264 @@
+{
+  "fixture_notice": "All keys, nonces, plaintexts, and AAD are public demonstration fixtures. The recovery function receives only the known plaintext and two ciphertexts. Target plaintexts in this report are evaluation data. Fixed inputs are for reproduction, not operational encryption.",
+  "cryptography_version": "50.0.2",
+  "algorithms": [
+    {
+      "algorithm": "AES-256-GCM",
+      "same_plaintext_control": {
+        "known_plaintext_hex": "5472616e73666572205553442031303020746f206163636f756e7420313233342e",
+        "known_plaintext_text": "Transfer USD 100 to account 1234.",
+        "target_plaintext_hex": "5472616e73666572205553442031303020746f206163636f756e7420313233342e",
+        "target_plaintext_text": "Transfer USD 100 to account 1234.",
+        "known_message": {
+          "nonce_hex": "000000000000000000000004",
+          "ciphertext_hex": "4f3aac6ffa973e6fa79844fe0fbf7e8df38cea3420b09b08f8e035fc5dc51a2e1c",
+          "tag_hex": "9c2fce0dab05cce0e7edb4b7b9e545e3"
+        },
+        "target_message": {
+          "nonce_hex": "000000000000000000000005",
+          "ciphertext_hex": "ccd3a30cb0d8f03f48071ab565c665d23b7048d6101857025db11902378d698e9d",
+          "tag_hex": "467b8ba0280cb1107ca0d021548d29fe"
+        },
+        "recovered_hex": "d79b6e0d3929ab22cfca0d0f4a482b6fe888cdc251cbaf65d03f58de5b7a4094af",
+        "recovered_text": "\u05dbn\r9)\\xab\"\\xcf\\xca\r\u000fJH+o\\xe8\\x88\\xcd\\xc2Q\u02efe\\xd0?X\\xde[z@\\x94\\xaf",
+        "ciphertext_xor_hex": "83e90f634a4fce50ef9f5e4b6a791b5fc8fca2e230a8cc0aa5512cfe6a4873a081",
+        "plaintext_xor_hex": "000000000000000000000000000000000000000000000000000000000000000000",
+        "recovered_bytes": 33,
+        "target_bytes": 33,
+        "round_trips_verified": true,
+        "nonce_reused": false,
+        "xor_matches": false,
+        "prefix_recovered": false,
+        "fully_recovered": false
+      },
+      "distinct_nonces": {
+        "known_plaintext_hex": "5472616e73666572205553442031303020746f206163636f756e7420313233342e",
+        "known_plaintext_text": "Transfer USD 100 to account 1234.",
+        "target_plaintext_hex": "5472616e73666572205553442039303020746f206163636f756e7420353637382e",
+        "target_plaintext_text": "Transfer USD 900 to account 5678.",
+        "known_message": {
+          "nonce_hex": "000000000000000000000001",
+          "ciphertext_hex": "41a4de923792556c2e7b027dcc970ac735eb737405d137eb066e77f91702406a14",
+          "tag_hex": "43b724273c2884f8c40aa51761e9e364"
+        },
+        "target_message": {
+          "nonce_hex": "000000000000000000000002",
+          "ciphertext_hex": "9d034f13c72dbfa399586f555778dbbca6635af08fca6cc0fb13261a44ed6cbcca",
+          "tag_hex": "9aa189ff60a51d5d9de2f2a24f706493"
+        },
+        "recovered_hex": "88d5f0ef83d98fbd97763e6cbbdee14bb3fc46a4eb783844881325c362dd1fe2f0",
+        "recovered_text": "\\x88\\xd5\\xf0\\xef\\x83\u064f\\xbd\\x97v>l\\xbb\\xde\\xe1K\\xb3\\xfcF\\xa4\\xebx8D\\x88\u0013%\\xc3b\\xdd\u001f\\xe2\\xf0",
+        "ciphertext_xor_hex": "dca79181f0bfeacfb7236d289befd17b938829848a1b5b2bfd7d51e353ef2cd6de",
+        "plaintext_xor_hex": "000000000000000000000000000800000000000000000000000000000404040c00",
+        "recovered_bytes": 33,
+        "target_bytes": 33,
+        "round_trips_verified": true,
+        "nonce_reused": false,
+        "xor_matches": false,
+        "prefix_recovered": false,
+        "fully_recovered": false
+      },
+      "reused_nonce": {
+        "known_plaintext_hex": "5472616e73666572205553442031303020746f206163636f756e7420313233342e",
+        "known_plaintext_text": "Transfer USD 100 to account 1234.",
+        "target_plaintext_hex": "5472616e73666572205553442039303020746f206163636f756e7420353637382e",
+        "target_plaintext_text": "Transfer USD 900 to account 5678.",
+        "known_message": {
+          "nonce_hex": "000000000000000000000001",
+          "ciphertext_hex": "41a4de923792556c2e7b027dcc970ac735eb737405d137eb066e77f91702406a14",
+          "tag_hex": "43b724273c2884f8c40aa51761e9e364"
+        },
+        "target_message": {
+          "nonce_hex": "000000000000000000000001",
+          "ciphertext_hex": "41a4de923792556c2e7b027dcc9f0ac735eb737405d137eb066e77f91306446614",
+          "tag_hex": "99e4518efb9a3d643cb0059b6d6489a4"
+        },
+        "recovered_hex": "5472616e73666572205553442039303020746f206163636f756e7420353637382e",
+        "recovered_text": "Transfer USD 900 to account 5678.",
+        "ciphertext_xor_hex": "000000000000000000000000000800000000000000000000000000000404040c00",
+        "plaintext_xor_hex": "000000000000000000000000000800000000000000000000000000000404040c00",
+        "recovered_bytes": 33,
+        "target_bytes": 33,
+        "round_trips_verified": true,
+        "nonce_reused": true,
+        "xor_matches": true,
+        "prefix_recovered": true,
+        "fully_recovered": true
+      },
+      "partial_recovery": {
+        "known_plaintext_hex": "5472616e736665722055534420313030",
+        "known_plaintext_text": "Transfer USD 100",
+        "target_plaintext_hex": "5472616e73666572204555522039303020746f206163636f756e7420353637382e20436f6e6669726d206265666f7265206e6f6f6e2e",
+        "target_plaintext_text": "Transfer EUR 900 to account 5678. Confirm before noon.",
+        "known_message": {
+          "nonce_hex": "000000000000000000000003",
+          "ciphertext_hex": "59566fdd2510d4a893c7c43b8b344eb1",
+          "tag_hex": "f9d1029622694696af3eb76976ff1026"
+        },
+        "target_message": {
+          "nonce_hex": "000000000000000000000003",
+          "ciphertext_hex": "59566fdd2510d4a893d7c22d8b3c4eb12af79e7d264165205457534ad022536ec30e296cd250c1b7a8c851b9b18fa795e58babb79d11",
+          "tag_hex": "0e24470fb395e8edaaab503bd1fe0120"
+        },
+        "recovered_hex": "5472616e736665722045555220393030",
+        "recovered_text": "Transfer EUR 900",
+        "ciphertext_xor_hex": "00000000000000000010061600080000",
+        "plaintext_xor_hex": "00000000000000000010061600080000",
+        "recovered_bytes": 16,
+        "target_bytes": 54,
+        "round_trips_verified": true,
+        "nonce_reused": true,
+        "xor_matches": true,
+        "prefix_recovered": true,
+        "fully_recovered": false
+      },
+      "tampering_rejected": {
+        "distinct_nonces": {
+          "ciphertext": true,
+          "tag": true,
+          "aad": true,
+          "key": true,
+          "nonce": true,
+          "truncation": true
+        },
+        "reused_nonce": {
+          "ciphertext": true,
+          "tag": true,
+          "aad": true,
+          "key": true,
+          "nonce": true,
+          "truncation": true
+        }
+      }
+    },
+    {
+      "algorithm": "ChaCha20-Poly1305",
+      "same_plaintext_control": {
+        "known_plaintext_hex": "5472616e73666572205553442031303020746f206163636f756e7420313233342e",
+        "known_plaintext_text": "Transfer USD 100 to account 1234.",
+        "target_plaintext_hex": "5472616e73666572205553442031303020746f206163636f756e7420313233342e",
+        "target_plaintext_text": "Transfer USD 100 to account 1234.",
+        "known_message": {
+          "nonce_hex": "000000000000000000000004",
+          "ciphertext_hex": "3f72ce6a0efdd751a657ad733d71be89c9967f0ac6b83acbe7f067621abeab6b02",
+          "tag_hex": "ae41465e96e1d4aaac63277079c237df"
+        },
+        "target_message": {
+          "nonce_hex": "000000000000000000000005",
+          "ciphertext_hex": "98ba827251f9fc4189db10f4ec2d394cb06ad8cd0adbb1ce92fe94a87d646306f5",
+          "tag_hex": "d749dc204145d706e1d7e6a04b8b35f5"
+        },
+        "recovered_hex": "f3ba2d762c624e620fd9eec3f16db7f55988c8e7ad00e86a006087ea56e8fb59d9",
+        "recovered_text": "\\xf3\\xba-v,bNb\u000f\\xd9\\xee\\xc3\\xf1m\\xb7\\xf5Y\\x88\\xc8\\xe7\\xad\u0000\\xe8j\u0000`\\x87\\xeaV\\xe8\\xfbY\\xd9",
+        "ciphertext_xor_hex": "a7c84c185f042b102f8cbd87d15c87c579fca7c7cc638b05750ef3ca67dac86df7",
+        "plaintext_xor_hex": "000000000000000000000000000000000000000000000000000000000000000000",
+        "recovered_bytes": 33,
+        "target_bytes": 33,
+        "round_trips_verified": true,
+        "nonce_reused": false,
+        "xor_matches": false,
+        "prefix_recovered": false,
+        "fully_recovered": false
+      },
+      "distinct_nonces": {
+        "known_plaintext_hex": "5472616e73666572205553442031303020746f206163636f756e7420313233342e",
+        "known_plaintext_text": "Transfer USD 100 to account 1234.",
+        "target_plaintext_hex": "5472616e73666572205553442039303020746f206163636f756e7420353637382e",
+        "target_plaintext_text": "Transfer USD 900 to account 5678.",
+        "known_message": {
+          "nonce_hex": "000000000000000000000001",
+          "ciphertext_hex": "3d2e1db7426cdd080d242d6b9325272230855060afd29f1a3054c10818dcac3efd",
+          "tag_hex": "f098298966e3c420076ecfe9fb1ae717"
+        },
+        "target_message": {
+          "nonce_hex": "000000000000000000000002",
+          "ciphertext_hex": "19b8d199791b0226ed6beb89edc97928078775ee70e78a82f151a51340568be6c6",
+          "tag_hex": "14707b759614079f796e241ef0e4bb25"
+        },
+        "recovered_hex": "70e4ad404811ba5cc01a95a65edd6e3a17764aaebe5676f7b46b103b69b814ec15",
+        "recovered_text": "p\\xe4\\xad@H\u0011\\xba\\\\xc0\u001a\\x95\\xa6^\\xddn:\u0017vJ\\xae\\xbeVv\\xf7\\xb4k\u0010;i\\xb8\u0014\\xec\u0015",
+        "ciphertext_xor_hex": "2496cc2e3b77df2ee04fc6e27eec5e0a3702258edf351598c105641b588a27d83b",
+        "plaintext_xor_hex": "000000000000000000000000000800000000000000000000000000000404040c00",
+        "recovered_bytes": 33,
+        "target_bytes": 33,
+        "round_trips_verified": true,
+        "nonce_reused": false,
+        "xor_matches": false,
+        "prefix_recovered": false,
+        "fully_recovered": false
+      },
+      "reused_nonce": {
+        "known_plaintext_hex": "5472616e73666572205553442031303020746f206163636f756e7420313233342e",
+        "known_plaintext_text": "Transfer USD 100 to account 1234.",
+        "target_plaintext_hex": "5472616e73666572205553442039303020746f206163636f756e7420353637382e",
+        "target_plaintext_text": "Transfer USD 900 to account 5678.",
+        "known_message": {
+          "nonce_hex": "000000000000000000000001",
+          "ciphertext_hex": "3d2e1db7426cdd080d242d6b9325272230855060afd29f1a3054c10818dcac3efd",
+          "tag_hex": "f098298966e3c420076ecfe9fb1ae717"
+        },
+        "target_message": {
+          "nonce_hex": "000000000000000000000001",
+          "ciphertext_hex": "3d2e1db7426cdd080d242d6b932d272230855060afd29f1a3054c1081cd8a832fd",
+          "tag_hex": "a2fc41b42c2bbb79c94b838ec9e5ea08"
+        },
+        "recovered_hex": "5472616e73666572205553442039303020746f206163636f756e7420353637382e",
+        "recovered_text": "Transfer USD 900 to account 5678.",
+        "ciphertext_xor_hex": "000000000000000000000000000800000000000000000000000000000404040c00",
+        "plaintext_xor_hex": "000000000000000000000000000800000000000000000000000000000404040c00",
+        "recovered_bytes": 33,
+        "target_bytes": 33,
+        "round_trips_verified": true,
+        "nonce_reused": true,
+        "xor_matches": true,
+        "prefix_recovered": true,
+        "fully_recovered": true
+      },
+      "partial_recovery": {
+        "known_plaintext_hex": "5472616e736665722055534420313030",
+        "known_plaintext_text": "Transfer USD 100",
+        "target_plaintext_hex": "5472616e73666572204555522039303020746f206163636f756e7420353637382e20436f6e6669726d206265666f7265206e6f6f6e2e",
+        "target_plaintext_text": "Transfer EUR 900 to account 5678. Confirm before noon.",
+        "known_message": {
+          "nonce_hex": "000000000000000000000003",
+          "ciphertext_hex": "d4377dd5412cc103a81aaf4e9bd6a673",
+          "tag_hex": "27ea65442f5f1f295f151ee0fdfd3c34"
+        },
+        "target_message": {
+          "nonce_hex": "000000000000000000000003",
+          "ciphertext_hex": "d4377dd5412cc103a80aa9589bdea67347a823e7a1be3c287e6472489483b6fa57fdf84b6d05669de24d928fbb52da8b576e246ac699",
+          "tag_hex": "675855a43b9867d268d02f0ffd20f45d"
+        },
+        "recovered_hex": "5472616e736665722045555220393030",
+        "recovered_text": "Transfer EUR 900",
+        "ciphertext_xor_hex": "00000000000000000010061600080000",
+        "plaintext_xor_hex": "00000000000000000010061600080000",
+        "recovered_bytes": 16,
+        "target_bytes": 54,
+        "round_trips_verified": true,
+        "nonce_reused": true,
+        "xor_matches": true,
+        "prefix_recovered": true,
+        "fully_recovered": false
+      },
+      "tampering_rejected": {
+        "distinct_nonces": {
+          "ciphertext": true,
+          "tag": true,
+          "aad": true,
+          "key": true,
+          "nonce": true,
+          "truncation": true
+        },
+        "reused_nonce": {
+          "ciphertext": true,
+          "tag": true,
+          "aad": true,
+          "key": true,
+          "nonce": true,
+          "truncation": true
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "format_version": 1,
+  "started_utc": "2026-11-17T00:18:21.491201+00:00",
+  "finished_utc": "2026-11-17T00:18:42.863283+00:00",
+  "config": {
+    "sizes": [
+      64,
+      4096,
+      1048576
+    ],
+    "samples": 30,
+    "target_ns": 20000000,
+    "warmup_batches": 3,
+    "max_operations": 65536,
+    "payload_budget_bytes": 67108864
+  },
+  "aad_hex": "6e6f6e63652d72657573652d73747564793a62656e63686d61726b",
+  "environment": {
+    "system": "Linux",
+    "release": "7.2.5-3-omarchy",
+    "machine": "x86_64",
+    "python": "3.14.7",
+    "cpu": {
+      "model": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+      "features": {
+        "aes": true,
+        "pclmulqdq": true,
+        "avx2": true
+      },
+      "scaling_governor": "powersave",
+      "scaling_driver": "intel_pstate"
+    },
+    "logical_cpus": 4,
+    "affinity": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "dependencies": {
+      "cryptography": "50.0.2",
+      "matplotlib": "3.11.2",
+      "numpy": "2.5.5"
+    },
+    "openssl": "OpenSSL 4.0.3 29 Sep 2026",
+    "gc_enabled": true,
+    "clock": {
+      "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+      "resolution_seconds": 1e-09,
+      "monotonic": true,
+      "adjustable": false
+    }
+  },
+  "load_before": [
+    1.0546875,
+    1.07421875,
+    1.001953125
+  ],
+  "load_after": [
+    1.181640625,
+    1.10205078125,
+    1.01171875
+  ],
+  "measurement_code_sha256": {
+    "benchmark.py": "3e50dcc1778fc9c210472a83f77b7e754819760d530fed4ec4ce8f5be401d44f",
+    "aead.py": "8d8a53ce4579670f4f294b684cff17d4bfc4e85e5813f226e5e8a38d9b0ebe1d",
+    "nonces.py": "68ebe03f1856ed77b3aaf5e6058473d4f25ce673bdcdb46e91a0f7f2cc346d82"
+  },
+  "samples_sha256": "35a4a66ef731e2ce9fcfacc5182cf86e2f04362e8a030ab3b113100f167fcb5c",
+  "calibration": [
+    {
+      "algorithm": "AES-256-GCM",
+      "operation": "encrypt",
+      "message_bytes": 64,
+      "operations": 22128,
+      "operation_cap": 65536,
+      "target_reached": true
+    },
+    {
+      "algorithm": "ChaCha20-Poly1305",
+      "operation": "encrypt",
+      "message_bytes": 64,
+      "operations": 18434,
+      "operation_cap": 65536,
+      "target_reached": true
+    },
+    {
+      "algorithm": "AES-256-GCM",
+      "operation": "decrypt",
+      "message_bytes": 64,
+      "operations": 21143,
+      "operation_cap": 65536,
+      "target_reached": true
+    },
+    {
+      "algorithm": "ChaCha20-Poly1305",
+      "operation": "decrypt",
+      "message_bytes": 64,
+      "operations": 18567,
+      "operation_cap": 65536,
+      "target_reached": true
+    },
+    {
+      "algorithm": "AES-256-GCM",
+      "operation": "encrypt",
+      "message_bytes": 4096,
+      "operations": 6271,
+      "operation_cap": 8160,
+      "target_reached": true
+    },
+    {
+      "algorithm": "ChaCha20-Poly1305",
+      "operation": "encrypt",
+      "message_bytes": 4096,
+      "operations": 4331,
+      "operation_cap": 8160,
+      "target_reached": true
+    },
+    {
+      "algorithm": "AES-256-GCM",
+      "operation": "decrypt",
+      "message_bytes": 4096,
+      "operations": 6688,
+      "operation_cap": 8160,
+      "target_reached": true
+    },
+    {
+      "algorithm": "ChaCha20-Poly1305",
+      "operation": "decrypt",
+      "message_bytes": 4096,
+      "operations": 3635,
+      "operation_cap": 8160,
+      "target_reached": true
+    },
+    {
+      "algorithm": "AES-256-GCM",
+      "operation": "encrypt",
+      "message_bytes": 1048576,
+      "operations": 27,
+      "operation_cap": 31,
+      "target_reached": true
+    },
+    {
+      "algorithm": "ChaCha20-Poly1305",
+      "operation": "encrypt",
+      "message_bytes": 1048576,
+      "operations": 19,
+      "operation_cap": 31,
+      "target_reached": true
+    },
+    {
+      "algorithm": "AES-256-GCM",
+      "operation": "decrypt",
+      "message_bytes": 1048576,
+      "operations": 26,
+      "operation_cap": 31,
+      "target_reached": true
+    },
+    {
+      "algorithm": "ChaCha20-Poly1305",
+      "operation": "decrypt",
+      "message_bytes": 1048576,
+      "operations": 19,
+      "operation_cap": 31,
+      "target_reached": true
+    }
+  ]
+}

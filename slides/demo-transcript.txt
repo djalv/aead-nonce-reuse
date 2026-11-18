@@ -1,0 +1,51 @@
+Nonce reuse demonstrations
+
+Keys, nonces and messages are public demonstration fixtures.
+
+AES-256-GCM
+Observation                                   Distinct     Reused
+Nonces are equal                                    no        yes
+Ciphertext XOR equals plaintext XOR                 no        yes
+Full known-plaintext recovery succeeds              no        yes
+Both round trips succeed                           yes        yes
+Same plaintext, distinct nonces: ciphertexts differ = yes
+
+Known plaintext:  Transfer USD 100 to account 1234.
+Target plaintext: Transfer USD 900 to account 5678.
+Ciphertexts below exclude authentication tags:
+  C1:              41a4de923792556c2e7b027dcc970ac735eb737405d137eb066e77f91702406a14
+  C2 (distinct):   9d034f13c72dbfa399586f555778dbbca6635af08fca6cc0fb13261a44ed6cbcca
+  C2 (reused):     41a4de923792556c2e7b027dcc9f0ac735eb737405d137eb066e77f91306446614
+Ciphertext XOR (reused): 000000000000000000000000000800000000000000000000000000000404040c00
+Plaintext XOR:           000000000000000000000000000800000000000000000000000000000404040c00
+Recovered (reused): Transfer USD 900 to account 5678.
+Partial recovery: 16/54 bytes
+Recovered prefix: 'Transfer EUR 900'
+Rejected changes (distinct_nonces): ciphertext, tag, aad, key, nonce, truncation
+Rejected changes (reused_nonce): ciphertext, tag, aad, key, nonce, truncation
+
+ChaCha20-Poly1305
+Observation                                   Distinct     Reused
+Nonces are equal                                    no        yes
+Ciphertext XOR equals plaintext XOR                 no        yes
+Full known-plaintext recovery succeeds              no        yes
+Both round trips succeed                           yes        yes
+Same plaintext, distinct nonces: ciphertexts differ = yes
+
+Known plaintext:  Transfer USD 100 to account 1234.
+Target plaintext: Transfer USD 900 to account 5678.
+Ciphertexts below exclude authentication tags:
+  C1:              3d2e1db7426cdd080d242d6b9325272230855060afd29f1a3054c10818dcac3efd
+  C2 (distinct):   19b8d199791b0226ed6beb89edc97928078775ee70e78a82f151a51340568be6c6
+  C2 (reused):     3d2e1db7426cdd080d242d6b932d272230855060afd29f1a3054c1081cd8a832fd
+Ciphertext XOR (reused): 000000000000000000000000000800000000000000000000000000000404040c00
+Plaintext XOR:           000000000000000000000000000800000000000000000000000000000404040c00
+Recovered (reused): Transfer USD 900 to account 5678.
+Partial recovery: 16/54 bytes
+Recovered prefix: 'Transfer EUR 900'
+Rejected changes (distinct_nonces): ciphertext, tag, aad, key, nonce, truncation
+Rejected changes (reused_nonce): ciphertext, tag, aad, key, nonce, truncation
+
+Recovery uses only the known plaintext and two ciphertext bodies, without recovering the key.
+Distinct nonces prevented recovery in these cases.
+Tampering rejection does not prove resistance to tag forgery after nonce reuse.

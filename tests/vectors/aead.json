@@ -1,0 +1,199 @@
+{
+  "sources": {
+    "nist-gcm": {
+      "url": "https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Algorithm-Validation-Program/documents/mac/gcmtestvectors.zip",
+      "sha256": "f9fc479e134cde2980b3bb7cddbcb567b2cd96fd753835243ed067699f26a023",
+      "members_sha256": {
+        "gcmEncryptExtIV256.rsp": "4448b4998c3f58cd9f5542ddf7c573189a721ff3d3ac24cd5177bb4910a787f8",
+        "gcmDecrypt256.rsp": "ed318735a517d5a85c82d2846c23dcf56e57a352fb0f0a163d9e7617a7bd12ad"
+      }
+    },
+    "rfc8439": {
+      "url": "https://www.rfc-editor.org/rfc/rfc8439.txt",
+      "sha256": "25bef70fbf7a07ff45c2fe4cb7c6ce954eac687413d8610603268b4e4415324c"
+    }
+  },
+  "vectors": [
+    {
+      "id": "nist-gcmEncryptExtIV256-pt0-aad0-count0",
+      "source": "nist-gcm",
+      "source_file": "gcmEncryptExtIV256.rsp",
+      "parameters_bits": {
+        "Keylen": 256,
+        "IVlen": 96,
+        "PTlen": 0,
+        "AADlen": 0,
+        "Taglen": 128
+      },
+      "count": 0,
+      "algorithm": "AES-256-GCM",
+      "expected": "accept",
+      "key_hex": "b52c505a37d78eda5dd34f20c22540ea1b58963cf8e5bf8ffa85f9f2492505b4",
+      "nonce_hex": "516c33929df5a3284ff463d7",
+      "plaintext_hex": "",
+      "aad_hex": "",
+      "ciphertext_hex": "",
+      "tag_hex": "bdc1ac884d332457a1d2664f168c76f0"
+    },
+    {
+      "id": "nist-gcmEncryptExtIV256-pt128-aad0-count0",
+      "source": "nist-gcm",
+      "source_file": "gcmEncryptExtIV256.rsp",
+      "parameters_bits": {
+        "Keylen": 256,
+        "IVlen": 96,
+        "PTlen": 128,
+        "AADlen": 0,
+        "Taglen": 128
+      },
+      "count": 0,
+      "algorithm": "AES-256-GCM",
+      "expected": "accept",
+      "key_hex": "31bdadd96698c204aa9ce1448ea94ae1fb4a9a0b3c9d773b51bb1822666b8f22",
+      "nonce_hex": "0d18e06c7c725ac9e362e1ce",
+      "plaintext_hex": "2db5168e932556f8089a0622981d017d",
+      "aad_hex": "",
+      "ciphertext_hex": "fa4362189661d163fcd6a56d8bf0405a",
+      "tag_hex": "d636ac1bbedd5cc3ee727dc2ab4a9489"
+    },
+    {
+      "id": "nist-gcmEncryptExtIV256-pt128-aad160-count0",
+      "source": "nist-gcm",
+      "source_file": "gcmEncryptExtIV256.rsp",
+      "parameters_bits": {
+        "Keylen": 256,
+        "IVlen": 96,
+        "PTlen": 128,
+        "AADlen": 160,
+        "Taglen": 128
+      },
+      "count": 0,
+      "algorithm": "AES-256-GCM",
+      "expected": "accept",
+      "key_hex": "83688deb4af8007f9b713b47cfa6c73e35ea7a3aa4ecdb414dded03bf7a0fd3a",
+      "nonce_hex": "0b459724904e010a46901cf3",
+      "plaintext_hex": "33d893a2114ce06fc15d55e454cf90c3",
+      "aad_hex": "794a14ccd178c8ebfd1379dc704c5e208f9d8424",
+      "ciphertext_hex": "cc66bee423e3fcd4c0865715e9586696",
+      "tag_hex": "0fb291bd3dba94a1dfd8b286cfb97ac5"
+    },
+    {
+      "id": "nist-gcmEncryptExtIV256-pt408-aad160-count0",
+      "source": "nist-gcm",
+      "source_file": "gcmEncryptExtIV256.rsp",
+      "parameters_bits": {
+        "Keylen": 256,
+        "IVlen": 96,
+        "PTlen": 408,
+        "AADlen": 160,
+        "Taglen": 128
+      },
+      "count": 0,
+      "algorithm": "AES-256-GCM",
+      "expected": "accept",
+      "key_hex": "24501ad384e473963d476edcfe08205237acfd49b5b8f33857f8114e863fec7f",
+      "nonce_hex": "9ff18563b978ec281b3f2794",
+      "plaintext_hex": "27f348f9cdc0c5bd5e66b1ccb63ad920ff2219d14e8d631b3872265cf117ee86757accb158bd9abb3868fdc0d0b074b5f01b2c",
+      "aad_hex": "adb5ec720ccf9898500028bf34afccbcaca126ef",
+      "ciphertext_hex": "eb7cb754c824e8d96f7c6d9b76c7d26fb874ffbf1d65c6f64a698d839b0b06145dae82057ad55994cf59ad7f67c0fa5e85fab8",
+      "tag_hex": "bc95c532fecc594c36d1550286a7a3f0"
+    },
+    {
+      "id": "nist-gcmDecrypt256-pt0-aad160-count1",
+      "source": "nist-gcm",
+      "source_file": "gcmDecrypt256.rsp",
+      "parameters_bits": {
+        "Keylen": 256,
+        "IVlen": 96,
+        "PTlen": 0,
+        "AADlen": 160,
+        "Taglen": 128
+      },
+      "count": 1,
+      "algorithm": "AES-256-GCM",
+      "expected": "accept",
+      "key_hex": "d33c33b003bda4bc2ae47b4f5e477e90607a6342967a73d8a88151ee99394b1a",
+      "nonce_hex": "cfc54a48b843763db1cdbaf6",
+      "plaintext_hex": "",
+      "aad_hex": "840befba8ef6ad83a74934919195a70f2d891dc0",
+      "ciphertext_hex": "",
+      "tag_hex": "9dde8b668c585f513f3048b8a2cd1b06"
+    },
+    {
+      "id": "nist-gcmDecrypt256-pt408-aad160-count2",
+      "source": "nist-gcm",
+      "source_file": "gcmDecrypt256.rsp",
+      "parameters_bits": {
+        "Keylen": 256,
+        "IVlen": 96,
+        "PTlen": 408,
+        "AADlen": 160,
+        "Taglen": 128
+      },
+      "count": 2,
+      "algorithm": "AES-256-GCM",
+      "expected": "accept",
+      "key_hex": "6450d4501b1e6cfbe172c4c8570363e96b496591b842661c28c2f6c908379cad",
+      "nonce_hex": "7e4262035e0bf3d60e91668a",
+      "plaintext_hex": "17449e236ef5858f6d891412495ead4607bfae2a2d735182a2a0242f9d52fc5345ef912dbe16f3bb4576fe3bcafe336dee6085",
+      "aad_hex": "f1c522f026e4c5d43851da516a1b78768ab18171",
+      "ciphertext_hex": "5a99b336fd3cfd82f10fb08f7045012415f0d9a06bb92dcf59c6f0dbe62d433671aacb8a1c52ce7bbf6aea372bf51e2ba79406",
+      "tag_hex": "fe93b01636f7bb0458041f213e98de65"
+    },
+    {
+      "id": "nist-gcmDecrypt256-pt0-aad0-count1",
+      "source": "nist-gcm",
+      "source_file": "gcmDecrypt256.rsp",
+      "parameters_bits": {
+        "Keylen": 256,
+        "IVlen": 96,
+        "PTlen": 0,
+        "AADlen": 0,
+        "Taglen": 128
+      },
+      "count": 1,
+      "algorithm": "AES-256-GCM",
+      "expected": "reject",
+      "key_hex": "e5a8123f2e2e007d4e379ba114a2fb66e6613f57c72d4e4f024964053028a831",
+      "nonce_hex": "51e43385bf533e168427e1ad",
+      "plaintext_hex": null,
+      "aad_hex": "",
+      "ciphertext_hex": "",
+      "tag_hex": "38fe845c66e66bdd884c2aecafd280e6"
+    },
+    {
+      "id": "nist-gcmDecrypt256-pt128-aad160-count4",
+      "source": "nist-gcm",
+      "source_file": "gcmDecrypt256.rsp",
+      "parameters_bits": {
+        "Keylen": 256,
+        "IVlen": 96,
+        "PTlen": 128,
+        "AADlen": 160,
+        "Taglen": 128
+      },
+      "count": 4,
+      "algorithm": "AES-256-GCM",
+      "expected": "reject",
+      "key_hex": "041ef9cd359ac65b7937dcee46778d19dc32a312c81edc15dbc8918df75081f0",
+      "nonce_hex": "4bf5a7c50201a6586b1dcdb5",
+      "plaintext_hex": null,
+      "aad_hex": "10980f54fdbd18e49a48cf74ecbbb7e9d22083a3",
+      "ciphertext_hex": "2c24ef09b6a01b5f200c59284316fa56",
+      "tag_hex": "36c2da827d58cdc8cd3faf0a335b1846"
+    },
+    {
+      "id": "rfc8439-appendix-a5",
+      "source": "rfc8439",
+      "section": "A.5",
+      "algorithm": "ChaCha20-Poly1305",
+      "expected": "accept",
+      "key_hex": "1c9240a5eb55d38af333888604f6b5f0473917c1402b80099dca5cbc207075c0",
+      "nonce_hex": "000000000102030405060708",
+      "plaintext_hex": "496e7465726e65742d4472616674732061726520647261667420646f63756d656e74732076616c696420666f722061206d6178696d756d206f6620736978206d6f6e74687320616e64206d617920626520757064617465642c207265706c616365642c206f72206f62736f6c65746564206279206f7468657220646f63756d656e747320617420616e792074696d652e20497420697320696e617070726f70726961746520746f2075736520496e7465726e65742d447261667473206173207265666572656e6365206d6174657269616c206f7220746f2063697465207468656d206f74686572207468616e206173202fe2809c776f726b20696e2070726f67726573732e2fe2809d",
+      "aad_hex": "f33388860000000000004e91",
+      "ciphertext_hex": "64a0861575861af460f062c79be643bd5e805cfd345cf389f108670ac76c8cb24c6cfc18755d43eea09ee94e382d26b0bdb7b73c321b0100d4f03b7f355894cf332f830e710b97ce98c8a84abd0b948114ad176e008d33bd60f982b1ff37c8559797a06ef4f0ef61c186324e2b3506383606907b6a7c02b0f9f6157b53c867e4b9166c767b804d46a59b5216cde7a4e99040c5a40433225ee282a1b0a06c523eaf4534d7f83fa1155b0047718cbc546a0d072b04b3564eea1b422273f548271a0bb2316053fa76991955ebd63159434ecebb4e466dae5a1073a6727627097a1049e617d91d361094fa68f0ff77987130305beaba2eda04df997b714d6c6f2c29a6ad5cb4022b02709b",
+      "tag_hex": "eead9d67890cbb22392336fea1851f38"
+    }
+  ]
+}
